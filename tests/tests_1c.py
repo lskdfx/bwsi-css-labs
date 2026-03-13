@@ -24,7 +24,7 @@ def test_single_middle():
 def test_alternating():
     assert max_subarray_sum([1,-1,1,-1,1]) == 1
 def test_zero_array():
-    with pytest.raises(ValueError, match="Array is Empty")
+    with pytest.raises(ValueError, match="Array is Empty"):
         max_subarray_sum([0])
 if __name__ = "__main__":
     pytest.main()
