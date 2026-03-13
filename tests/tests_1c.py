@@ -1,5 +1,5 @@
 import pytest
-from labs.lab_1.lab_1c.py import max_subarray_sum
+from labs.lab_1.lab_1c import max_subarray_sum
 
 def test_original():
     assert max_subarray_sum([-2,1,-3,4,-1,2,1,-5,4]) == 6
