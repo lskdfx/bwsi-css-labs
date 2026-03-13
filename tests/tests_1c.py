@@ -26,5 +26,5 @@ def test_alternating():
 def test_zero_array():
     with pytest.raises(ValueError, match="Array is Empty"):
         max_subarray_sum([0])
-if __name__ = "__main__":
+if __name__ == "__main__":
     pytest.main()
