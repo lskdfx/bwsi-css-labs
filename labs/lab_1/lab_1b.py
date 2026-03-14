@@ -2,12 +2,13 @@
 lab_1b.py
 
 This is a script that implements a simple calculator. It takes two numbers and an operation,
-then performs the operation and returns the result. 
+then performs the operation and returns the result.
 
 The script asks the user to input the numbers and the operation to be performed,
 and prints the result to the terminal window.
 
 """
+
 
 def simple_calculator(operation: str, num1: float, num2: float) -> float:
     """
@@ -35,16 +36,40 @@ def simple_calculator(operation: str, num1: float, num2: float) -> float:
         else:
             raise ValueError("Cannot divide by zero.")
     else:
-        raise ValueError("Invalid operation. Please choose from 'add', 'subtract', 'multiply', or 'divide'.")
+        raise ValueError(
+            "Invalid operation. Please choose from 'add', 'subtract', 'multiply', or 'divide'."
+        )
+
 
 def main():
-    
+
     print(f"===== Simple Calculator =====")
 
-    # Ask the user for sample input    
-    num1 = float(input("Enter the first number: "))
-    num2 = float(input("Enter the second number: "))
-    operation = input("Enter the operation (add, subtract, multiply, divide): ").strip().lower()
+    # Ask the user for sample input
+    while True:
+        try:
+            num1 = float(input("Enter the first number: "))
+            break
+        except ValueError:
+            print("Invalid input. Please enter a valid number.")
+
+    while True:
+        try:
+            num2 = float(input("Enter the second number: "))
+            break
+        except ValueError:
+            print("Invalid input. Please enter a valid number.")
+
+    while True:
+        operation = (
+            input("Enter the operation (add, subtract, multiply, divide): ")
+            .strip()
+            .lower()
+        )
+        if operation in ["add", "subtract", "multiply", "divide"]:
+            break
+        else:
+            print("Invalid input. Please enter a valid operation.")
 
     # Perform the calculation and display the result
     result = simple_calculator(operation, num1, num2)
